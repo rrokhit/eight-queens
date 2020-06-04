@@ -3,12 +3,7 @@ public class Client {
 
 	public static void main(String[] args) {
 		Board b = new Board(8);
-		b.placeQueen(1, 1);
-		b.state();
-		System.out.println(b.isSafe(2, 2));
-		b.removeQueen(2, 2);
-		System.out.println();
-		b.state();
+		solve(b);
 	}
 	
 	/*
@@ -16,29 +11,35 @@ public class Client {
 	 * 
 	 * @param Board b
 	 */
-	public static void solve(Board b) {
-
+	public static void solve(Board board) {
+		if(backtrack(board,1)) {
+			System.out.println("Solution found:");
+			board.state();
+		}else {
+			System.out.println("No solutions found");
+		}
 	}
 	
 	/*
 	 * Private method that actually solves problem
 	 * 
-	 * @param Board b
-	 * @param int col
+	 * @param Board board
+	 * @param int column
+	 * @return boolean 
 	 */
-	private static boolean backtrack(Board b, int column) {
+	private static boolean backtrack(Board board, int column) {
 		//success path
-		if(column>b.getSize()) {
+		if(column>board.getSize()) {
 			return true;
 		//exploratory path
 		}else {
-			for(int row = 1 ; row <= b.getSize(); row++) {
-				if(b.isSafe(row, column)) {
-					b.placeQueen(row, column);
-					if(backtrack(b, column +1)) {
+			for(int row = 1 ; row <= board.getSize(); row++) {
+				if(board.isSafe(row, column)) {
+					board.placeQueen(row, column);
+					if(backtrack(board, column +1)) {
 						return true;
 					}
-					b.removeQueen(row, column);
+					board.removeQueen(row, column);
 				}
 			}
 			return false;
