@@ -5,6 +5,7 @@ Sounds tough, but on a classic 8x8 chessboard there are actually over 80 solutio
 15x15 board. 
 
 Solution found:
+
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
