@@ -5,17 +5,17 @@ public class Board {
 	private int size;
 	private int[][] queens;
 
-	/*
-	 * Constructor
+	/**
+	 * Constructor 
 	 * 
-	 * @param int size
+	 * @param size
 	 */
 	public Board(int size) {
 		this.size = size;
 		this.queens = new int[size][size];
 	}
 
-	/*
+	/**
 	 * Determines whether Queen is safe, at a given index, to be placed or not
 	 * 
 	 * @param int row
@@ -64,7 +64,7 @@ public class Board {
 		return true;
 	}
 
-	/*
+	/**
 	 * Place Queen at given index
 	 * 
 	 * @param int row
@@ -75,7 +75,7 @@ public class Board {
 		this.queens[row - 1][column - 1]++;
 	}
 
-	/*
+	/**
 	 * Removes Queen from given index
 	 * 
 	 * @param int row
@@ -86,7 +86,7 @@ public class Board {
 		this.queens[row - 1][column - 1]--;
 	}
 
-	/*
+	/**
 	 * Prints state of board
 	 */
 	public void state() {
@@ -95,7 +95,7 @@ public class Board {
 		}
 	}
 
-	/*
+	/**
 	 * Gets size of board
 	 * 
 	 * @return int

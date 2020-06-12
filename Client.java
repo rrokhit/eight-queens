@@ -2,11 +2,11 @@
 public class Client {
 
 	public static void main(String[] args) {
-		Board b = new Board(8);
+		Board b = new Board(25);
 		solve(b);
 	}
 	
-	/*
+	/**
 	 * Client method used to solve board
 	 * 
 	 * @param Board b
@@ -20,7 +20,7 @@ public class Client {
 		}
 	}
 	
-	/*
+	/**
 	 * Private method that actually solves problem
 	 * 
 	 * @param Board board
